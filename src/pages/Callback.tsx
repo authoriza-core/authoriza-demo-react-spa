@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { exchangeCodeForTokens } from "../feature/auth";
 import { useAuthoriza } from '../feature/auth/ui/AuthorizaProvider';
+import { REDIRECT_URI } from '../feature/auth/config/const.ts';
 
 // Компонент Callback — сюда возвращается пользователь после успешного логина в Authoriza.
 // В URL есть параметры: ?code=...&state=...
@@ -48,7 +49,7 @@ export default function Callback() {
         const result = await exchangeCodeForTokens({
           code,
           codeVerifier,
-          redirectUri: "http://localhost:5173/callback",
+          redirectUri: REDIRECT_URI,
         });
 
         await setTokensFromCallback(result);
