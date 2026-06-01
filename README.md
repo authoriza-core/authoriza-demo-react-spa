@@ -207,9 +207,9 @@ Authorization: Bearer <access_token>
 Проверьте параметры:
 
 ```
-VITE_AUTHORIZA_DOMAIN=
-VITE_AUTHORIZA_CLIENT_ID=
-VITE_AUTHORIZA_REDIRECT_URI=
+VITE_CLIENT_ID=
+VITE_REDIRECT_URI=
+VITE_OIDC_PROVIDER=
 ```
 
 ---
@@ -248,7 +248,7 @@ https://demo.yourdomain.ru
 https://demo.yourdomain.ru/callback
 ```
 
-По Этому адресу вы должны принимать запросы и обрабатывать аналогично тому как сделано здесь.
+По Этому адресу вы должны принимать запросы и обрабатывать аналогично тому как сделано здесь в проекте.
 Укажите этот redirect_uri в **настройках приложения в Авторизе**, иначе запрос будет отклонён.
 
 ---
@@ -306,7 +306,7 @@ Access_token должен быть проверен по:
 
 # 🔧 Пример использования access_token на backend
 
-Ниже — пример проверки токена вашего API, если front передаёт:
+Ниже — пример проверки токена вашего API, если фронтенд передаёт:
 
 ```
 Authorization: Bearer <access_token>
